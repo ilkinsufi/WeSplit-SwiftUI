@@ -9,10 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ZStack{
-            Text("ZStack içindəki text")
-                .background(.red)
-        }
+        ZStack {
+            VStack(spacing: 0) {
+                Color.red
+                Color.purple
+            }
+            
+            Text("salam")
+                .foregroundStyle(.white)
+                .font(.system(size: 30, weight: .bold))
+                .padding(50)
+                .background(.ultraThinMaterial)
+
+        }.ignoresSafeArea(.all)
     }
 }
 
