@@ -8,20 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showAlert = false
     var body: some View {
-        ZStack {
-            VStack(spacing: 0) {
-                Color.red
-                Color.purple
+        NavigationStack {
+            Form {
+                Section{
+                    Text("Hello, World!")
+                    Text("Hello, World!")
+                }
+                Text("Hello, World!")
             }
-            
-            Text("salam")
-                .foregroundStyle(.white)
-                .font(.system(size: 30, weight: .bold))
-                .padding(50)
-                .background(.ultraThinMaterial)
-
-        }.ignoresSafeArea(.all)
+        }
+        .navigationTitle("WeSplit")
     }
 }
 
