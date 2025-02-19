@@ -8,18 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var showAlert = false
+    let students = ["Ilkin", "Bek", "Bekim","Bekir"]
+    @State private var seletedStudent = "Ilkin"
+    
+    
     var body: some View {
-        NavigationStack {
-            Form {
-                Section{
-                    Text("Hello, World!")
-                    Text("Hello, World!")
+        NavigationStack{
+            Form{
+                Picker("Select your studenr", selection: $seletedStudent){
+                    ForEach(students, id: \.self){
+                        Text($0)
+                    }
                 }
-                Text("Hello, World!")
             }
+            .navigationTitle("Select a Student")
         }
-        .navigationTitle("WeSplit")
     }
 }
 
